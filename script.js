@@ -3,12 +3,12 @@ scrollPageToBottom().then(function () {
         $('.pv-skills-section__additional-skills').click();
 
         setTimeout(function(){
-            var endorses = $('.pv-skill-entity__featured-endorse-button-shared');
+            var endorses = $('.pv-skill-entity__featured-endorse-button-shared[aria-pressed="false"]');
+
             console.log('endorses available', endorses.length);
 
             for (var i=0; i<endorses.length; i++) {
                 endorses[i].click();
-
 
                 clickVeryGood().then(function () {
                     clickSubmit();
@@ -49,7 +49,6 @@ function scrollPageToMiddle () {
         let thirdOfHeight = Math.floor(document.body.clientHeight/3);
 
         scroll(0, thirdOfHeight);
-
 
         setTimeout(function () {
             resolve(true);
